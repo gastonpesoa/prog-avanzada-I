@@ -6,7 +6,7 @@ public class Program {
 		// TODO Auto-generated method stub
 		Persona per1 = new Persona();
 		per1.setDni(123);
-		String nombrePer1 = new String("Gaston");
+		String nombrePer1 = new String("Jessica");
 		per1.setNombre(nombrePer1);
 		
 		Persona per2 = new Persona("Gaston", 123);

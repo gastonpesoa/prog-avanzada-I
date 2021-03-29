@@ -29,4 +29,20 @@ public class Persona {
 	public void setDni(int dni) {
 		this.dni = dni;
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(o == null) {
+			return false;
+		} else if(o instanceof Persona) {
+			Persona p = (Persona)o;
+			if(this.dni == p.dni && this.nombre.equals(p.nombre)) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
 }
