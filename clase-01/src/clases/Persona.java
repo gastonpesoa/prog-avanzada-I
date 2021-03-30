@@ -34,7 +34,8 @@ public class Persona {
 	public boolean equals(Object o) {
 		if(o == null) {
 			return false;
-		} else if(o instanceof Persona) {
+		//} else if(o instanceof Persona) { // esto se puede mejorar
+		} else if(o.getClass().equals(this.getClass())) {
 			Persona p = (Persona)o;
 			if(this.dni == p.dni && this.nombre.equals(p.nombre)) {
 				return true;
@@ -44,5 +45,19 @@ public class Persona {
 		} else {
 			return false;
 		}
+	}
+	
+	@Override
+	public int hashCode() {
+		final int primo = 21; // final > inalterable
+		int retorno = 0;
+		retorno = primo * this.dni;
+		retorno += primo * this.nombre.hashCode();
+		return retorno;
+	}
+	
+	@Override
+	public String toString() {
+		return "Dni: " + this.dni + " - Nombre: " + this.nombre;
 	}
 }
