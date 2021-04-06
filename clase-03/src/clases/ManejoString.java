@@ -7,9 +7,10 @@ public class ManejoString {
 	 * @return
 	 * @throws Exception
 	 */
-	public int cantidadDeCaracteres (String texto) throws Exception {
-		if("".equals(texto)) {
-			throw new Exception("No puede ser vacío");
+	public int cantidadDeCaracteres (String texto) throws Exception 
+	{
+		if(texto == null || "".equals(texto)) {
+			throw new RuntimeException("No puede ser vacío");
 		}
 		return texto.length();
 	}
